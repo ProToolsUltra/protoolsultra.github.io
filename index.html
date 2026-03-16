@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ProTools Ultra - Smart Utility Hub</title>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;600;800&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --grad-1: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            --grad-2: linear-gradient(135deg, #ff6a00 0%, #ee0979 100%);
+            --bg-color: #f0f4f8; 
+            --dark-footer: #1a1a1a;
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Outfit', sans-serif; }
+        
+        body { 
+            background: linear-gradient(120deg, #e0eafc 0%, #cfdef3 100%);
+            color: #1e293b; 
+            padding-top: 100px; 
+            min-height: 100vh; 
+            display: flex; 
+            flex-direction: column; 
+        }
+
+        header {
+            background: #ffffff;
+            height: 70px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 0 2%; 
+            position: fixed;
+            top: 0; width: 100%;
+            z-index: 1000;
+            box-shadow: 0 2px 15px rgba(0,0,0,0.08);
+        }
+        .logo-area { display: flex; align-items: center; gap: 10px; }
+        .logo-icon { background: #4f46e5; color: white; padding: 5px 10px; border-radius: 8px; font-weight: 800; }
+        .logo-text { font-size: 1.4rem; font-weight: 800; color: #1e293b; }
+        
+        .header-right { display: flex; align-items: center; }
+        .header-link { color: #64748b; text-decoration: none; font-weight: 600; font-size: 0.9rem; padding-right: 10px; }
+
+        .container { max-width: 1200px; margin: auto; padding: 10px; text-align: center; flex: 1; width: 95%; }
+        h1 { font-size: 2.5rem; margin-bottom: 10px; font-weight: 800; color: #0f172a; }
+        .tagline { color: #475569; margin-bottom: 40px; font-weight: 500; }
+
+        .tool-card {
+            background: rgba(255, 255, 255, 0.9);
+            backdrop-filter: blur(10px);
+            border-radius: 24px;
+            padding: 30px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.06);
+            margin-bottom: 30px;
+            text-align: left;
+            border: 1px solid rgba(255, 255, 255, 0.6);
+            transition: 0.3s;
+            max-width: 900px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        .tool-card:hover { transform: translateY(-5px); }
+
+        .icon-box {
+            width: 50px; height: 50px;
+            border-radius: 12px;
+            display: flex; align-items: center; justify-content: center;
+            font-size: 1.5rem; margin-bottom: 15px; color: white;
+        }
+        .bg-purple { background: var(--grad-1); }
+        .bg-orange { background: var(--grad-2); }
+
+        label { display: block; margin-bottom: 10px; font-weight: 600; color: #334155; }
+        input {
+            width: 100%;
+            padding: 15px;
+            border: 2px solid #cbd5e1;
+            border-radius: 12px;
+            font-size: 1rem;
+            margin-bottom: 20px;
+            outline: none;
+            background: white;
+        }
+        input:focus { border-color: #4f46e5; }
+
+        .btn {
+            width: 100%;
+            padding: 15px;
+            border: none;
+            border-radius: 12px;
+            color: white;
+            font-size: 1rem;
+            font-weight: 700;
+            cursor: pointer;
+            transition: 0.3s;
+        }
+        .btn-purple { background: var(--grad-1); }
+        .btn-orange { background: var(--grad-2); }
+
+        .result {
+            margin-top: 20px;
+            padding: 20px;
+            border-radius: 12px;
+            font-weight: 700;
+            display: none;
+            text-align: center;
+            line-height: 1.6;
+        }
+        .res-purple { background: #e0e7ff; color: #3730a3; }
+        .res-orange { background: #ffedd5; color: #9a3412; }
+
+        footer { 
+            background: var(--dark-footer); 
+            color: #ffffff; 
+            padding: 30px 2%; 
+            text-align: center; 
+            border-top: 5px solid #333;
+            font-size: 0.95rem;
+            width: 100%;
+        }
+    </style>
+</head>
+<body>
+
+<header>
+    <div class="logo-area">
+        <div class="logo-icon">PT</div>
+        <div class="logo-text">ProTools Ultra</div>
+    </div>
+    <div class="header-right">
+        <a href="#" class="header-link">Tools</a>
+    </div>
+</header>
+
+<div class="container">
+    <h1>Supercharge Your Workflow</h1>
+    <p class="tagline">The most colorful and accurate tools on the web.</p>
+
+    <div class="tool-card">
+        <div class="icon-box bg-purple">📅</div>
+        <h2 style="margin-bottom: 10px;">Age Calculator</h2>
+        <label>Select Date of Birth:</label>
+        <input type="date" id="dobInput">
+        <button class="btn btn-purple" onclick="calcAge()">Calculate Detailed Age</button>
+        <div id="ageRes" class="result res-purple"></div>
+    </div>
+
+    <div class="tool-card">
+        <div class="icon-box bg-orange">⚖️</div>
+        <h2 style="margin-bottom: 10px;">Unit Converter (Miles & KG)</h2>
+        <label>Enter Value (KM or KG):</label>
+        <input type="number" id="unitInput" placeholder="e.g. 50">
+        <div style="display: flex; gap: 10px;">
+            <button class="btn btn-orange" onclick="calcMiles()">KM to Miles</button>
+            <button class="btn btn-orange" style="background: #e11d48;" onclick="calcLbs()">KG to Pounds</button>
+        </div>
+        <div id="unitRes" class="result res-orange"></div>
+    </div>
+</div>
+
+<footer>
+    &copy; 2026 ProTools Ultra
+</footer>
+
+<script>
+    function calcAge() {
+        const birthDate = new Date(document.getElementById('dobInput').value);
+        if(!birthDate.getTime()) return alert("Please select a date!");
+        const today = new Date();
+        let years = today.getFullYear() - birthDate.getFullYear();
+        let months = today.getMonth() - birthDate.getMonth();
+        let days = today.getDate() - birthDate.getDate();
+        if (days < 0) {
+            months--;
+            days += new Date(today.getFullYear(), today.getMonth(), 0).getDate();
+        }
+        if (months < 0) {
+            years--;
+            months += 12;
+        }
+        const out = document.getElementById('ageRes');
+        out.innerHTML = `✨ Your age is:<br><strong>${years} Years, ${months} Months, and ${days} Days</strong>`;
+        out.style.display = "block";
+    }
+
+    function calcMiles() {
+        const val = document.getElementById('unitInput').value;
+        if(!val) return alert("Enter a value!");
+        const res = (val * 0.621371).toFixed(2);
+        const out = document.getElementById('unitRes');
+        out.innerHTML = `🚀 <strong>${val} KM</strong> = <strong>${res} Miles</strong>`;
+        out.style.display = "block";
+    }
+
+    function calcLbs() {
+        const val = document.getElementById('unitInput').value;
+        if(!val) return alert("Enter a value!");
+        const res = (val * 2.20462).toFixed(2);
+        const out = document.getElementById('unitRes');
+        out.innerHTML = `⚖️ <strong>${val} KG</strong> = <strong>${res} Pounds (lbs)</strong>`;
+        out.style.display = "block";
+    }
+</script>
+
+</body>
+</html>
