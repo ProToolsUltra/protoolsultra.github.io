@@ -3,9 +3,23 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>ProTools Ultra - Smart Utility Hub</title>
     
+    <title>ProTools Ultra - All-In-One Smart Utility Hub</title>
+    <meta name="description" content="ProTools Ultra provides 6 premium free tools: Age Calculator, BMI Checker, Unit Converter, Word Counter, Discount Calculator, and Password Generator. Fast and easy to use.">
+    <meta name="keywords" content="Age Calculator, BMI Calculator, Word Counter, Password Generator, Discount Calculator, Unit Converter, ProTools Ultra, Online Tools">
+    <meta name="author" content="Waqas Haider">
+    <meta name="robots" content="index, follow">
+
+    <meta name="google-site-verification" content="YAHAN_APNI_CODE_PASTE_KAREIN" />
+
+    <meta property="og:title" content="ProTools Ultra - 6 Professional Tools in One Place">
+    <meta property="og:description" content="Calculate age, BMI, discounts, and more with our fast utility hub.">
+    <meta property="og:image" content="https://cdn.vectorstock.com/i/1000v/03/93/initial-letter-pt-logo-template-design-vector-22790393.jpg">
+    <meta property="og:url" content="https://waqashaid55.github.io/protools/">
+    <meta property="og:type" content="website">
+
     <link rel="icon" type="image/jpeg" href="https://cdn.vectorstock.com/i/1000v/03/93/initial-letter-pt-logo-template-design-vector-22790393.jpg">
+    
     <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;600;800&display=swap" rel="stylesheet">
     
     <style>
@@ -42,20 +56,22 @@
             box-shadow: 0 2px 15px rgba(0,0,0,0.08);
         }
 
-        .logo-area { 
+        .logo-area { display: flex; align-items: center; gap: 12px; }
+
+        .logo-img-container {
+            width: 45px; height: 45px; 
+            overflow: hidden; 
+            border-radius: 8px; 
             display: flex; 
             align-items: center; 
-            gap: 12px; 
-            overflow: hidden; /* Zoomed image bahar na nikle */
+            justify-content: center;
+            background: white;
         }
 
-        /* Yahan logo ko zoom kiya gaya hai */
         .logo-img { 
-            width: 45px; 
-            height: 45px; 
-            border-radius: 8px; 
+            width: 100%; height: 100%; 
             object-fit: cover; 
-            transform: scale(1.4); /* 1.4 se center se zoom ho jayega */
+            transform: scale(1.4); 
             transition: 0.3s;
         }
         
@@ -129,8 +145,8 @@
 
 <header>
     <div class="logo-area">
-        <div style="width: 45px; height: 45px; overflow: hidden; border-radius: 8px; display: flex; align-items: center; justify-content: center;">
-            <img src="https://cdn.vectorstock.com/i/1000v/03/93/initial-letter-pt-logo-template-design-vector-22790393.jpg" alt="PT Logo" class="logo-img">
+        <div class="logo-img-container">
+            <img src="https://cdn.vectorstock.com/i/1000v/03/93/initial-letter-pt-logo-template-design-vector-22790393.jpg" alt="ProTools Ultra Logo" class="logo-img">
         </div>
         <div class="logo-text">ProTools Ultra</div>
     </div>
@@ -139,7 +155,7 @@
 
 <div class="container">
     <h1>All-In-One Utility Hub</h1>
-    <p class="tagline">6 Premium tools to make your life easier.</p>
+    <p class="tagline">Speed up your workflow with our premium free tools.</p>
 
     <div class="tool-card">
         <div class="icon-box" style="background: var(--grad-1)">📅</div>
@@ -205,7 +221,7 @@
 </div>
 
 <footer>
-    &copy; 2026 ProTools Ultra | Your Personal Utility Hub
+    &copy; 2026 ProTools Ultra
 </footer>
 
 <script>
