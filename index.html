@@ -35,7 +35,7 @@
             --grad-4: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
             --grad-5: linear-gradient(135deg, #84fab0 0%, #8fd3f4 100%);
             --grad-6: linear-gradient(135deg, #11998e 0%, #38ef7d 100%);
-            --footer-bg: #ffffff; /* Footer background white kar diya */
+            --footer-bg: #ffffff;
         }
 
         * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Outfit', sans-serif; }
@@ -231,8 +231,16 @@
 </footer>
 
 <script>
-    // Keeping your original functions
+    // TRACKING FUNCTION: Ye Google Analytics ko bataye ga ke kaunsa tool use hua
+    function trackEvent(toolName) {
+        gtag('event', 'use_tool', {
+            'tool_id': toolName,
+            'event_category': 'Engagement'
+        });
+    }
+
     function calcAge() {
+        trackEvent('age_calculator');
         const birthDate = new Date(document.getElementById('dobInput').value);
         if(!birthDate.getTime()) return alert("Select Date!");
         const today = new Date();
@@ -247,6 +255,7 @@
     }
 
     function calcBMI() {
+        trackEvent('bmi_calculator');
         const w = document.getElementById('bmiWeight').value;
         const h = document.getElementById('bmiHeight').value / 100;
         if(!w || !h) return;
@@ -257,6 +266,7 @@
     }
 
     function countWords() {
+        // Isay auto track nahi karte warna har lafz par event jayega
         const text = document.getElementById('wordInput').value.trim();
         const words = text ? text.split(/\s+/).length : 0;
         const chars = text.length;
@@ -264,6 +274,7 @@
     }
 
     function calcDiscount() {
+        trackEvent('discount_calculator');
         const p = document.getElementById('price').value;
         const d = document.getElementById('discount').value;
         if(!p || !d) return;
@@ -275,6 +286,7 @@
     }
 
     function genPass() {
+        trackEvent('password_generator');
         const len = document.getElementById('passLength').value;
         const charset = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789!@#$%^&*";
         let res = "";
@@ -285,6 +297,7 @@
     }
 
     function calcMiles() {
+        trackEvent('unit_converter_miles');
         const val = document.getElementById('unitInput').value;
         const res = (val * 0.621).toFixed(2);
         const out = document.getElementById('unitRes');
@@ -293,6 +306,7 @@
     }
 
     function calcLbs() {
+        trackEvent('unit_converter_lbs');
         const val = document.getElementById('unitInput').value;
         const res = (val * 2.204).toFixed(2);
         const out = document.getElementById('unitRes');
