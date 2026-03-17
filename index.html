@@ -74,7 +74,6 @@
         .logo-img { width: 100%; height: 100%; object-fit: cover; transform: scale(1.3); }
         .logo-text { font-size: 1.35rem; font-weight: 800; color: #1e293b; }
 
-        /* --- TITLE SIZE INCREASED --- */
         .header-center-title {
             flex: 2;
             text-align: center;
@@ -98,7 +97,6 @@
         
         .container { max-width: 1000px; margin: auto; padding: 0 20px; text-align: center; flex: 1; width: 100%; }
         
-        /* --- TAGLINE SPACE REDUCED --- */
         .tagline { 
             color: #64748b; 
             margin: 15px auto 30px auto; 
@@ -152,6 +150,35 @@
             font-weight: 700; display: none; text-align: center; line-height: 1.6;
         }
 
+        /* --- Tool Description Styling --- */
+        .tool-description {
+            margin-top: 25px;
+            padding-top: 20px;
+            border-top: 1px solid #f1f5f9;
+            font-size: 0.95rem;
+            color: #64748b;
+            line-height: 1.6;
+        }
+        .tool-description h3 {
+            font-size: 1.1rem;
+            color: #1e293b;
+            margin-bottom: 8px;
+            font-weight: 700;
+        }
+        .feature-list {
+            margin-top: 10px;
+            list-style: none;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 8px;
+        }
+        .feature-list li {
+            display: flex;
+            align-items: center;
+            gap: 6px;
+            font-size: 0.85rem;
+        }
+
         footer { 
             background: #ffffff; color: #64748b; padding: 40px 2%; 
             text-align: center; border-top: 1px solid #e2e8f0; margin-top: 40px;
@@ -164,6 +191,7 @@
             .logo-text { display: none; }
             .tagline { margin-top: 5px; font-size: 0.95rem; }
             .tool-card { padding: 25px; }
+            .feature-list { grid-template-columns: 1fr; }
         }
     </style>
 </head>
@@ -194,6 +222,15 @@
         <input type="date" id="dobInput">
         <button class="btn" style="background: var(--grad-1)" onclick="calcAge()">Calculate Detailed Age</button>
         <div id="ageRes" class="result" style="background:#f5f3ff; color:#5b21b6; border: 1px solid #ddd6fe;"></div>
+        
+        <div class="tool-description">
+            <h3>Advanced Chronological Tracking</h3>
+            <p>Our Age Calculator provides a precise breakdown of your life journey. Whether you're calculating for official forms or personal curiosity, we ensure down-to-the-day accuracy.</p>
+            <ul class="feature-list">
+                <li>✅ Year/Month/Day Format</li>
+                <li>✅ Leap-year sensitive</li>
+            </ul>
+        </div>
     </div>
 
     <div class="tool-card">
@@ -206,6 +243,15 @@
             <button class="btn" style="background: #e11d48;" onclick="calcLbs()">KG to Pounds</button>
         </div>
         <div id="unitRes" class="result" style="background:#fff7ed; color:#9a3412; border: 1px solid #ffedd5;"></div>
+
+        <div class="tool-description">
+            <h3>Seamless Metric Conversion</h3>
+            <p>Convert distance and mass instantly. A must-have tool for travelers, shipping managers, and international students working with different measurement standards.</p>
+            <ul class="feature-list">
+                <li>✅ High precision decimals</li>
+                <li>✅ Instant calculation</li>
+            </ul>
+        </div>
     </div>
 
     <div class="tool-card">
@@ -217,6 +263,15 @@
         </div>
         <button class="btn" style="background: var(--grad-3)" onclick="calcBMI()">Check Health Score</button>
         <div id="bmiRes" class="result" style="background:#f0f9ff; color:#0369a1; border: 1px solid #e0f2fe;"></div>
+
+        <div class="tool-description">
+            <h3>Body Mass Index (BMI) Insights</h3>
+            <p>Your health is your wealth. Use our BMI tracker to determine if your weight is in a healthy proportion to your height based on global health standards.</p>
+            <ul class="feature-list">
+                <li>✅ Standard WHO Logic</li>
+                <li>✅ Weight Goal Support</li>
+            </ul>
+        </div>
     </div>
 
     <div class="tool-card">
@@ -226,6 +281,15 @@
         <textarea id="wordInput" rows="4" oninput="countWords()"></textarea>
         <div id="wordRes" class="result" style="background:#fdf2f8; color:#9d174d; display:block; border: 1px solid #fce7f3;">
             Words: 0 | Characters: 0
+        </div>
+
+        <div class="tool-description">
+            <h3>Professional Text Analysis</h3>
+            <p>Ensure your content fits within social media limits or academic requirements. Our tool analyzes your text in real-time as you type or paste.</p>
+            <ul class="feature-list">
+                <li>✅ Real-time word count</li>
+                <li>✅ Spaces included</li>
+            </ul>
         </div>
     </div>
 
@@ -238,6 +302,15 @@
         </div>
         <button class="btn" style="background: #38bdf8; color:white;" onclick="calcDiscount()">Calculate Final Price</button>
         <div id="discountRes" class="result" style="background:#f0fdf4; color:#166534; border: 1px solid #dcfce7;"></div>
+
+        <div class="tool-description">
+            <h3>Smart Financial Calculations</h3>
+            <p>Don't let sales confuse you. Instantly calculate exactly how much you save and what the final price tag will be during seasonal promotions.</p>
+            <ul class="feature-list">
+                <li>✅ Shows total savings</li>
+                <li>✅ Error-free shopping</li>
+            </ul>
+        </div>
     </div>
 
     <div class="tool-card">
@@ -247,6 +320,15 @@
         <input type="number" id="passLength" value="12">
         <button class="btn" style="background: var(--grad-6)" onclick="genPass()">Generate Secure Password</button>
         <div id="passRes" class="result" style="background:#f0fdf4; color:#166534; border: 1px solid #dcfce7;"></div>
+
+        <div class="tool-description">
+            <h3>Cyber Security Protection</h3>
+            <p>Generate high-entropy, complex passwords to protect your online accounts. Our tool uses randomized logic to ensure maximum security against hackers.</p>
+            <ul class="feature-list">
+                <li>✅ No data logged</li>
+                <li>✅ Fully randomized</li>
+            </ul>
+        </div>
     </div>
 </div>
 
